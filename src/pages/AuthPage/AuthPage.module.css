@@ -1,0 +1,7 @@
+.authContainer{
+    border: 5px solid  black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
