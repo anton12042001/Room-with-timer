@@ -1,8 +1,11 @@
 import React from 'react';
 import cl from './AuthForm.module.css'
 import { useForm } from "react-hook-form";
+import {useDispatch} from "react-redux";
+import {authUser} from "../../reduxToolkit/slices/userSlice";
 
 const AuthForm = () => {
+    const dispatch = useDispatch()
     const {
         register,
         handleSubmit,
@@ -10,8 +13,12 @@ const AuthForm = () => {
     } = useForm();
 
     const onSubmit = (data) => {
+        const authData = {
+            email:data.email,
+            password:data.password
+        }
         reset()
-
+        dispatch(authUser(authData))
     }
 
     return (
