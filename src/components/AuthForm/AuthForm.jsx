@@ -17,12 +17,15 @@ const AuthForm = () => {
             email:data.email,
             password:data.password
         }
-        reset()
+        if(!<AuthForm/>){
+            reset()
+        }
         dispatch(authUser(authData))
     }
 
     return (
-        <div >
+        <div className={cl.authFormContainer} >
+            <div className={cl.authFormTitle} >Авторизация</div>
             <form className={cl.authFormLogin}  onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <input className={cl.signInInputEmail}  placeholder={"Введите email"} {...register("email")} type="email"/>
@@ -30,7 +33,9 @@ const AuthForm = () => {
                 <div>
                     <input className={cl.signInInputPassword}  placeholder={"Введите пароль"} {...register("password")} type="password"/>
                 </div>
-                <button className={cl.buttonSignIp}  type={"submit"}>Войти</button>
+                <div className={cl.formButtonSignUp} >
+                    <button className={cl.buttonSignUp} type={"submit"}>Войти</button>
+                </div>
             </form>
         </div>
     );
