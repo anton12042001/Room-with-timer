@@ -1,0 +1,10 @@
+.tableContainer{
+    display: flex;
+}
+.tableItem{
+    margin: 0 150px 0 0;
+}
+.tableItemName{
+    position: absolute;
+    top: 150px;
+}
